@@ -94,7 +94,7 @@ If you are dealing with pdf uploads or running the test suite, you'll also need
 to install GhostScript. On Mac OS X, you can also install that using Homebrew:
 
     brew install gs
-    
+
 If you're on Ubuntu (or any Debian base Linux distribution), you'll want to run the following with apt-get:
 
     sudo apt-get install imagemagick -y
@@ -147,7 +147,7 @@ Paperclip is distributed as a gem, which is how it should be used in your app.
 Include the gem in your Gemfile:
 
 ```ruby
-gem "paperclip", "~> 4.3"
+gem "paperclip", "~> 5.0"
 ```
 
 If you're still using Rails 2.3.x, you should do this instead:

@@ -1,8 +1,15 @@
 master:
 
+5.0.0 (9/5/2015):
+
 * Improvement: Paperclip now supports aws-sdk v2 (@betesh, @davetchen, https://github.com/thoughtbot/paperclip/pull/1903)
     If your Gemfile contains aws-sdk (>= 2.0.0) and aws-sdk-v1, paperclip will use aws-sdk v2.
     With aws-sdk v2, S3 storage requires you to set the s3_region.  s3_region may be nested in s3_credentials, and (if not nested in s3_credentials) it may be a Proc.
+* `url` on a unpersisted record returns default_url rather than `nil`
+* Add code of conduct
+* Bugfix for image magick scaling images up
+* README adjustments
+* Fixes rspec deprecation warnings
 
 4.3.0 (6/18/2015):
 
