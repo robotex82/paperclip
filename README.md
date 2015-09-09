@@ -1,12 +1,16 @@
 Paperclip
 =========
 
-[![Build Status](https://secure.travis-ci.org/thoughtbot/paperclip.svg?branch=master)](http://travis-ci.org/thoughtbot/paperclip) [![Dependency Status](https://gemnasium.com/thoughtbot/paperclip.svg?travis)](https://gemnasium.com/thoughtbot/paperclip) [![Code Climate](https://codeclimate.com/github/thoughtbot/paperclip.svg)](https://codeclimate.com/github/thoughtbot/paperclip) [![Inline docs](http://inch-ci.org/github/thoughtbot/paperclip.svg)](http://inch-ci.org/github/thoughtbot/paperclip) [![Security](https://hakiri.io/github/thoughtbot/paperclip/master.svg)](https://hakiri.io/github/thoughtbot/paperclip/master)
+[![Build Status](https://secure.travis-ci.org/thoughtbot/paperclip.svg?branch=master)](http://travis-ci.org/thoughtbot/paperclip)
+[![Dependency Status](https://gemnasium.com/thoughtbot/paperclip.svg?travis)](https://gemnasium.com/thoughtbot/paperclip)
+[![Code Climate](https://codeclimate.com/github/thoughtbot/paperclip.svg)](https://codeclimate.com/github/thoughtbot/paperclip)
+[![Inline docs](http://inch-ci.org/github/thoughtbot/paperclip.svg)](http://inch-ci.org/github/thoughtbot/paperclip)
+[![Security](https://hakiri.io/github/thoughtbot/paperclip/master.svg)](https://hakiri.io/github/thoughtbot/paperclip/master)
 
 - [Requirements](#requirements)
-  - [Ruby on Rails](#ruby-and-rails)
+  - [Ruby and Rails](#ruby-and-rails)
   - [Image Processor](#image-processor)
-  - [file](#file)
+  - [`file`](#file)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
   - [Models](#models)
@@ -18,19 +22,20 @@ Paperclip
   - [Deleting an Attachment](#deleting-an-attachment)
 - [Usage](#usage)
 - [Validations](#validations)
+- [Internationalization (I18n)](#internationalization-i18n)
 - [Security Validations](#security-validations)
 - [Defaults](#defaults)
 - [Migrations](#migrations-1)
-  - [Table Definition](#table-definition)
+  - [Add Attachment Column To A Table](#add-attachment-column-to-a-table)
   - [Schema Definition](#schema-definition)
-  - [Vintage Syntax](#vintage-syntax)
+  - [Vintage syntax](#vintage-syntax)
 - [Storage](#storage)
   - [Understanding Storage](#understanding-storage)
 - [Post Processing](#post-processing)
 - [Events](#events)
 - [URI Obfuscation](#uri-obfuscation)
-  - [MD5 Checksum / Fingerprint](#md5-checksum--fingerprint)
-  - [File Preservation for Soft-Delete](#file-preservation-for-soft-delete)
+- [MD5 Checksum / Fingerprint](#md5-checksum--fingerprint)
+- [File Preservation for Soft-Delete](#file-preservation-for-soft-delete)
 - [Custom Attachment Processors](#custom-attachment-processors)
 - [Dynamic Configuration](#dynamic-configuration)
   - [Dynamic Styles](#dynamic-styles)
@@ -396,6 +401,12 @@ inferred content_type, regardless of the actual contents of the file.
 
 ---
 
+Internationalization (I18n)
+---------------------------
+
+For using or adding locale files in different languages, check the project
+https://github.com/thoughtbot/paperclip-i18n.
+
 Security Validations
 ====================
 
@@ -490,6 +501,7 @@ class CreateUsersWithAttachments < ActiveRecord::Migration
     create_table :users do |t|
       t.attachment :avatar
     end
+  end
 
   # This is assuming you are only using the users table for Paperclip attachment. Drop with care!
   def down
